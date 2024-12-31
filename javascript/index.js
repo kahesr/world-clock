@@ -14,6 +14,9 @@ function updateTime() {
 
 function updateCityList(event) {
   let selectedTimezone = event.target.value;
+  if (event.target.value === "current") {
+    selectedTimezone = moment.tz.guess();
+  }
   let cities = document.querySelectorAll(".city");
   let cityExists = Array.from(cities).some(
     (city) => city.dataset.timezone === selectedTimezone
