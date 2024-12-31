@@ -5,6 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
 	<title>World Clock</title>
 </head>
 
@@ -20,26 +23,28 @@
 		</select>
 
 		<div class="cityList">
-			<div class="city">
+			<div class="city" id="los-angeles" data-timezone="America/Los_Angeles">
 				<div>
 					<h2>Los Angeles</h2>
-					<div class="date">December 30th 2024</div>
+					<div class="date"></div>
 				</div>
-				<div class="time">1:48:15 <small>AM</small></div>
+				<div class="time"></div>
 			</div>
-			<div class="city">
+			<div class="city" id="sydney" data-timezone="Australia/Sydney">
 				<div>
 					<h2>Sydney</h2>
-					<div class="date">December 30th 2024</div>
+					<div class="date"></div>
 				</div>
-				<div class="time">1:48:15 <small>AM</small></div>
+				<div class="time"></div>
 			</div>
 
 		</div>
 
 	</div>
-	<footer>This project was coded by <a href="https://github.com/kahesr" target="_blank">Sarah</a> and is open sources on
-		<a href="https://github.com/kahesr/world-clock" target="_blank">GitHub</a></footer>
+	<footer>This project was coded by <a href="https://github.com/kahesr" target="_blank">Sarah</a> and is open sources
+		on
+		<a href="https://github.com/kahesr/world-clock" target="_blank">GitHub</a>
+	</footer>
 	<script src="javascript/index.js"></script>
 </body>
 
