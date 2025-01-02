@@ -9,6 +9,8 @@ function updateTime() {
 
     city.querySelector(".date").innerHTML = date;
     city.querySelector(".time").innerHTML = time;
+
+    checkDayTime(city, time);
   });
 }
 
@@ -36,6 +38,16 @@ function updateCityList(event) {
     </div>
     <div class="time">${time}</div>
     </div>`;
+  }
+}
+
+function checkDayTime(city, time) {
+  let isPM = time.includes("PM");
+
+  // Change background color if PM
+  if (isPM) {
+    city.style.backgroundColor = "rgba(0, 0, 0, 0.15)";
+    city.style.color = "var(--lightcream-color)"; // Adjust text color for better visibility
   }
 }
 
