@@ -54,5 +54,14 @@ function checkDayTime(city, time) {
 let selectedCity = document.querySelector("#selected-city");
 selectedCity.addEventListener("change", updateCityList);
 
+function deleteCity(event) {
+  let city = event.target.closest(".city");
+  if (city) {
+    city.remove();
+  }
+}
+
+document.querySelector(".cityList").addEventListener("click", deleteCity);
+
 updateTime();
 setInterval(updateTime, 1000);

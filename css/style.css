@@ -96,10 +96,26 @@ select option {
   border: 1px dashed rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
 }
 
 .city:last-child {
   margin-bottom: 0;
+}
+
+.city:hover::before {
+  content: "Delete?";
+
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--lightcream-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 h2 {
