@@ -5,7 +5,7 @@ function updateTime() {
     let timezone = city.dataset.timezone; //Australia/Sydney
     let localTime = moment().tz(timezone);
     let date = localTime.format("dddd Do YYYY");
-    let time = localTime.format("h:mm:ss [<small]>A[</small]");
+    let time = localTime.format("h:mm:ss [<small]>A[</small>]");
 
     city.querySelector(".date").innerHTML = date;
     city.querySelector(".time").innerHTML = time;
@@ -28,7 +28,7 @@ function updateCityList(event) {
     let cityName = selectedTimezone.replace("_", " ").split(`/`)[1];
     let localTime = moment().tz(selectedTimezone);
     let date = localTime.format("dddd Do YYYY");
-    let time = localTime.format("h:mm:ss [<small]>A[</small]");
+    let time = localTime.format("h:mm:ss [<small]>A[</small>]");
     let cityList = document.querySelector(".cityList");
 
     cityList.innerHTML += `<div class="city" data-timezone="${selectedTimezone}">
@@ -37,7 +37,10 @@ function updateCityList(event) {
     <div class="date">${date}</div>
     </div>
     <div class="time">${time}</div>
-    </div>`;
+    </div>    
+		<div>
+			<a href="/"><button class="homeBtn">Return to Home Page</button></a>
+		</div>`;
   }
 }
 

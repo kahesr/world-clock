@@ -52,6 +52,7 @@ body {
 h1 {
   text-align: center;
   font-size: 36px;
+  margin: 0 0 25px;
 }
 
 select {
@@ -105,10 +106,15 @@ select option {
 }
 
 .city:hover::before {
-  content: "Delete?";
+  content: "Delete";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  height: 30%;
 
   display: flex;
-  align-items: center; /* Vertically center the content */
+  align-items: center;
   justify-content: center;
 
   background-color: rgba(0, 0, 0, 0.2);
@@ -138,14 +144,34 @@ h2 {
   line-height: 48px;
 }
 
+a {
+  text-decoration: none;
+}
+
+.homeBtn {
+  display: block;
+  margin: 25px auto 0;
+  background-color: var(--primary-color);
+  opacity: 0.5;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.homeBtn:hover {
+  opacity: 0.4;
+}
+
 footer {
   margin-top: 20px;
   text-align: center;
   font-size: 0.8rem;
 }
 
-a {
-  text-decoration: none;
+footer a {
   font-weight: 600;
   color: var(--lightcream-color);
 }
