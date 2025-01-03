@@ -96,32 +96,42 @@ select option {
   padding: 15px;
   border: 1px dashed rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  cursor: default;
   position: relative;
+  width: 100%;
 }
 
 .city:last-child {
   margin-bottom: 0;
 }
 
-.city:hover::before {
-  content: "Delete";
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  height: 30%;
+.city-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.delete-button {
+  display: none;
+}
+
+.city-container:hover .delete-button {
+  display: inline-block;
+  width: 10%;
+  margin-right: 5px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(137, 168, 178, 0.55);
   color: var(--lightcream-color);
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
+  cursor: pointer;
 }
 
 h2 {
@@ -151,18 +161,20 @@ a {
 .homeBtn {
   display: block;
   margin: 25px auto 0;
-  background-color: var(--primary-color);
-  opacity: 0.5;
-  padding: 7px 20px;
+  background-color: rgba(137, 168, 178, 0.55);
+  color: var(--text-color);
+  padding: 7px 35px;
   border: none;
   border-radius: 4px;
-  transition: all 200ms ease-in-out;
+  transition: all 100ms ease-in-out;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: fit-content;
+  font-size: 0.75rem;
 }
 
 .homeBtn:hover {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 footer {

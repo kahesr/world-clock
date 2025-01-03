@@ -31,17 +31,30 @@ function updateCityList(event) {
     let time = localTime.format("h:mm:ss [<small]>A[</small>]");
     let cityList = document.querySelector(".cityList");
 
-    cityList.innerHTML += `<div class="city" data-timezone="${selectedTimezone}">
+    cityList.innerHTML += `<div class="city-container">
+				<span class="delete-button">Delete</span><div class="city" data-timezone="${selectedTimezone}">
     <div>
     <h2>${cityName}</h2>
     <div class="date">${date}</div>
     </div>
     <div class="time">${time}</div>
-    </div>    
-		<div>
-			<a href="/"><button class="homeBtn">Return to Home Page</button></a>
-		</div>`;
+    </div></div>`;
+
+    addHomeButton();
   }
+}
+
+function addHomeButton() {
+  let cityList = document.querySelector(".cityList");
+  let homeButtonContainer = document.querySelector(".homeBtn-container");
+
+  if (homeButtonContainer) {
+    homeButtonContainer.remove();
+  }
+
+  cityList.innerHTML += `<div class="homeBtn-container">
+				<a href="/" class="homeBtn">Return to Home Page</a>
+			</div>`;
 }
 
 function checkDayTime(city, time) {
@@ -54,17 +67,23 @@ function checkDayTime(city, time) {
   }
 }
 
-let selectedCity = document.querySelector("#selected-city");
-selectedCity.addEventListener("change", updateCityList);
-
 function deleteCity(event) {
-  let city = event.target.closest(".city");
-  if (city) {
-    city.remove();
+  if (event.target.classList.contains("delete-button")) {
+    let cityContainer = event.target.closest(".city-container");
+    if (cityContainer) {
+      cityContainer.remove();
+
+      addHomeButton();
+    }
   }
 }
 
-document.querySelector(".cityList").addEventListener("click", deleteCity);
+/////////////////////////////////////////////////
+let cityList = document.querySelector(".cityList");
+let selectedCity = document.querySelector("#selected-city");
+
+cityList.addEventListener("click", deleteCity);
+selectedCity.addEventListener("change", updateCityList);
 
 updateTime();
 setInterval(updateTime, 1000);
